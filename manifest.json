@@ -1,0 +1,26 @@
+{
+  "name": "Buildspace",
+  "description": "Make Buildspace your homepage",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "16.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Buildspace"
+  },
+  "chrome_url_overrides": {
+    "newtab": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },  
+  "permissions": ["contextMenus", "tabs", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["popup.js"]
+    }
+  ]
+}
